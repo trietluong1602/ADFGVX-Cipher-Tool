@@ -32,48 +32,36 @@ footer {
     margin-right: inherit;
 }
 
-#forms .grid * {
+textarea{
+    border-radius: 0.5em;
+    padding: 0.2em 1em 0em 0.2em;
+    height: 20em;
+    width: 90%;
+}
+
+.outer_table{
+    width: 100%;
+}
+
+.inner_table{
     box-sizing: border-box;
-}
-
-#forms .grid {
-    width: fit-content;
-    margin: 0 auto;
-    text-align: center;
-}
-
-#forms .grid table {
+    border-spacing: 2px;
     border-collapse: collapse;
-    margin: 0 auto;
 }
 
-#forms .grid table td {
-    padding: 1px !important;
-}
-
-#forms .grid table td input {
+.inner_table th, .inner_table td{
     text-align: center;
+    width: 2.15em;
+    height: 2.15em;
 }
 
-#forms .grid table th input {
-    font-weight: bold;
-    text-transform: none;
+.inner_table td input, .inner_table th input{
+    text-align: center;
+    width: 2.15em;
+    height: 2.15em;
 }
 
-#forms .grid table .th {
-    background: linear-gradient(#fcf8ea, #ffffff, #f8eff3) repeat scroll 0 0;
-}
-
-#forms .options {
-    opacity: 0.5;
-    zoom: 80%;
-    text-align: left;
-}
-
-#forms .options:hover {
-    opacity: 1;
-}
-
-#forms .grid table input:placeholder-shown {
-    background: linear-gradient(to left top, transparent 47.75%, currentColor 49.5%, currentColor 50.5%, transparent 52.25%);
+.container{
+    width: inherit;
+    margin: 2em;
 }
