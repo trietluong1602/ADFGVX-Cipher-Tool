@@ -8,6 +8,8 @@
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
         <link rel="stylesheet" href="styles.css">
+		<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+		<script src="https://cdn.rawgit.com/michalsnik/aos/2.1.1/dist/aos.js"></script>
     </head>
 
     <body>
@@ -16,185 +18,190 @@
                 <div class="navbar-header">
                     <a class="navbar-brand" href="#">ADFGVX Cipher</a>
                 </div>
-                <ul class="nav navbar-nav">
-                    <li class="active"><a href="#">Encipher</a></li>
-                    <li><a href="decipher.html">Decipher</a></li>
-                </ul>
             </div>
         </nav>
         
         <div class="container">
-            <table class="outer_table">
-                <tbody>
-                    <tr>
-                        <td style="width: 40%;">
-                            <label for="cipher_adfgvx_plaintext">ADFGVX plain text</label>
-                            <br>
-                            <textarea name="plaintext" 
-                                    spellcheck="false" 
-                                    id="cipher_adfgvx_plaintext"
-                                    data-hasqtip="1" 
-                                    aria-describedby="qtip-1">Enter Plaintext Here...</textarea>
-                        </td>
-                        <td style="width: 60%;">
-                            <label for="adfgvx_table">ADFGVX Table</label>
-                            <br>
-                            <table class="inner_table" id="adfgvx_table">
-                                <tr>
-                                    <th></th>
-                                    <th>A</th>
-                                    <th>D</th>
-                                    <th>F</th>
-                                    <th>G</th>
-                                    <th>V</th>
-                                    <th>X</th>
-                                </tr>
-                                <tr>
-                                    <th data-header-row="0">A</th>
-                                    <td><input type="text" data-index="0" data-row="0" data-col="0"
-                                            autocomplete="off">
-                                    </td>
-                                    <td><input type="text" data-index="1" data-row="0" data-col="1"
-                                            autocomplete="off">
-                                    </td>
-                                    <td><input type="text" data-index="2" data-row="0" data-col="2"
-                                            autocomplete="off">
-                                    </td>
-                                    <td><input type="text" data-index="3" data-row="0" data-col="3"
-                                            autocomplete="off">
-                                    </td>
-                                    <td><input type="text" data-index="4" data-row="0" data-col="4"
-                                            autocomplete="off">
-                                    </td>
-                                    <td><input type="text" data-index="5" data-row="0" data-col="5"
-                                            autocomplete="off">
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <th data-header-row="1">D</th>
-                                    <td><input type="text" data-index="6" data-row="1" data-col="0"
-                                            autocomplete="off">
-                                    </td>
-                                    <td><input type="text" data-index="7" data-row="1" data-col="1"
-                                            autocomplete="off">
-                                    </td>
-                                    <td><input type="text" data-index="8" data-row="1" data-col="2"
-                                            autocomplete="off">
-                                    </td>
-                                    <td><input type="text" data-index="9" data-row="1" data-col="3"
-                                            autocomplete="off">
-                                    </td>
-                                    <td><input type="text" data-index="10" data-row="1" data-col="4"
-                                            autocomplete="off">
-                                    </td>
-                                    <td><input type="text" data-index="11" data-row="1" data-col="5"
-                                            autocomplete="off">
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <th data-header-row="2">F</th>
-                                    <td><input type="text" data-index="12" data-row="2" data-col="0"
-                                            autocomplete="off">
-                                    </td>
-                                    <td><input type="text" data-index="13" data-row="2" data-col="1"
-                                            autocomplete="off">
-                                    </td>
-                                    <td><input type="text" data-index="14" data-row="2" data-col="2"
-                                            autocomplete="off">
-                                    </td>
-                                    <td><input type="text" data-index="15" data-row="2" data-col="3"
-                                            autocomplete="off">
-                                    </td>
-                                    <td><input type="text" data-index="16" data-row="2" data-col="4"
-                                            autocomplete="off">
-                                    </td>
-                                    <td><input type="text" data-index="17" data-row="2" data-col="5"
-                                            autocomplete="off">
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <th data-header-row="3">G</th>
-                                    <td><input type="text" data-index="18" data-row="3" data-col="0"
-                                            autocomplete="off">
-                                    </td>
-                                    <td><input type="text" data-index="19" data-row="3" data-col="1"
-                                            autocomplete="off">
-                                    </td>
-                                    <td><input type="text" data-index="20" data-row="3" data-col="2"
-                                            autocomplete="off">
-                                    </td>
-                                    <td><input type="text" data-index="21" data-row="3" data-col="3"
-                                            autocomplete="off">
-                                    </td>
-                                    <td><input type="text" data-index="22" data-row="3" data-col="4"
-                                            autocomplete="off">
-                                    </td>
-                                    <td><input type="text" data-index="23" data-row="3" data-col="5"
-                                            autocomplete="off">
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <th data-header-row="4">V</th>
-                                    <td><input type="text" data-index="24" data-row="4" data-col="0"
-                                            autocomplete="off">
-                                    </td>
-                                    <td><input type="text" data-index="25" data-row="4" data-col="1"
-                                            autocomplete="off">
-                                    </td>
-                                    <td><input type="text" data-index="26" data-row="4" data-col="2"
-                                            autocomplete="off">
-                                    </td>
-                                    <td><input type="text" data-index="27" data-row="4" data-col="3"
-                                            autocomplete="off">
-                                    </td>
-                                    <td><input type="text" data-index="28" data-row="4" data-col="4"
-                                            autocomplete="off">
-                                    </td>
-                                    <td><input type="text" data-index="29" data-row="4" data-col="5"
-                                            autocomplete="off">
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <th data-header-row="5">X</th>
-                                    <td><input type="text" data-index="30" data-row="5" data-col="0"
-                                            autocomplete="off">
-                                    </td>
-                                    <td><input type="text" data-index="31" data-row="5" data-col="1"
-                                            autocomplete="off">
-                                    </td>
-                                    <td><input type="text" data-index="32" data-row="5" data-col="2"
-                                            autocomplete="off">
-                                    </td>
-                                    <td><input type="text" data-index="33" data-row="5" data-col="3"
-                                            autocomplete="off">
-                                    </td>
-                                    <td><input type="text" data-index="34" data-row="5" data-col="4"
-                                            autocomplete="off">
-                                    </td>
-                                    <td><input type="text" data-index="35" data-row="5" data-col="5"
-                                            autocomplete="off">
-                                    </td>
-                                </tr>                                                    
-                            </table>
-                            <input name="grid" 
-                                type="hidden" 
-                                autocomplete="off" 
-                                data-reload="true" 
-                                value="{&quot;width&quot;:6,
-                                    &quot;height&quot;:6,
-                                    &quot;cells&quot;:[&quot;&quot;,&quot;&quot;,&quot;&quot;,&quot;&quot;,&quot;&quot;,&quot;&quot;,
-                                                    &quot;&quot;,&quot;&quot;,&quot;&quot;,&quot;&quot;,&quot;&quot;,&quot;&quot;,
-                                                    &quot;&quot;,&quot;&quot;,&quot;&quot;,&quot;&quot;,&quot;&quot;,&quot;&quot;,
-                                                    &quot;&quot;,&quot;&quot;,&quot;&quot;,&quot;&quot;,&quot;&quot;,&quot;&quot;,
-                                                    &quot;&quot;,&quot;&quot;,&quot;&quot;,&quot;&quot;,&quot;&quot;,&quot;&quot;,
-                                                    &quot;&quot;,&quot;&quot;,&quot;&quot;,&quot;&quot;,&quot;&quot;,&quot;&quot;],
-                                    &quot;headers&quot;:{&quot;row&quot;:[&quot;A&quot;,&quot;D&quot;,&quot;F&quot;,&quot;G&quot;,&quot;V&quot;,&quot;X&quot;],
-                                                        &quot;col&quot;:[&quot;A&quot;,&quot;D&quot;,&quot;F&quot;,&quot;G&quot;,&quot;V&quot;,&quot;X&quot;]}}">
-                        </td>
-                    </tr>
-                </tbody>
-            </table>
+			<table class="outer_table">
+				<tbody>
+					<tr>
+						<td style="width: 35%;">
+							<label for="cipher_adfgvx_plaintext">Plaintext</label>
+							<br>
+							<textarea name="plaintext" 
+									spellcheck="false" 
+									id="plaintext"
+									data-hasqtip="1" 
+									class="inouttextarea"
+									aria-describedby="qtip-1"
+									placeholder="Enter Plaintext Here..."></textarea>
+						</td>
+						<td style="width: 30%;">
+							<label for="adfgvx_table">ADFGVX Table</label>
+							<br>
+							<table class="inner_table" id="keysquare">
+								<tr>
+									<th></th>
+									<th>A</th>
+									<th>D</th>
+									<th>F</th>
+									<th>G</th>
+									<th>V</th>
+									<th>X</th>
+								</tr>
+								<tr>
+									<th data-header-row="0">A</th>
+									<td><input type="text" data-index="0" data-row="0" data-col="0"
+											autocomplete="off" maxlength="1">
+									</td>
+									<td><input type="text" data-index="1" data-row="0" data-col="1"
+											autocomplete="off" maxlength="1">
+									</td>
+									<td><input type="text" data-index="2" data-row="0" data-col="2"
+											autocomplete="off" maxlength="1">
+									</td>
+									<td><input type="text" data-index="3" data-row="0" data-col="3"
+											autocomplete="off" maxlength="1">
+									</td>
+									<td><input type="text" data-index="4" data-row="0" data-col="4"
+											autocomplete="off" maxlength="1">
+									</td>
+									<td><input type="text" data-index="5" data-row="0" data-col="5"
+											autocomplete="off" maxlength="1">
+									</td>
+								</tr>
+								<tr>
+									<th data-header-row="1">D</th>
+									<td><input type="text" data-index="6" data-row="1" data-col="0"
+											autocomplete="off" maxlength="1">
+									</td>
+									<td><input type="text" data-index="7" data-row="1" data-col="1"
+											autocomplete="off" maxlength="1">
+									</td>
+									<td><input type="text" data-index="8" data-row="1" data-col="2"
+											autocomplete="off" maxlength="1">
+									</td>
+									<td><input type="text" data-index="9" data-row="1" data-col="3"
+											autocomplete="off" maxlength="1">
+									</td>
+									<td><input type="text" data-index="10" data-row="1" data-col="4"
+											autocomplete="off" maxlength="1">
+									</td>
+									<td><input type="text" data-index="11" data-row="1" data-col="5"
+											autocomplete="off" maxlength="1">
+									</td>
+								</tr>
+								<tr>
+									<th data-header-row="2">F</th>
+									<td><input type="text" data-index="12" data-row="2" data-col="0"
+											autocomplete="off" maxlength="1">
+									</td>
+									<td><input type="text" data-index="13" data-row="2" data-col="1"
+											autocomplete="off" maxlength="1">
+									</td>
+									<td><input type="text" data-index="14" data-row="2" data-col="2"
+											autocomplete="off" maxlength="1">
+									</td>
+									<td><input type="text" data-index="15" data-row="2" data-col="3"
+											autocomplete="off" maxlength="1">
+									</td>
+									<td><input type="text" data-index="16" data-row="2" data-col="4"
+											autocomplete="off" maxlength="1">
+									</td>
+									<td><input type="text" data-index="17" data-row="2" data-col="5"
+											autocomplete="off" maxlength="1">
+									</td>
+								</tr>
+								<tr>
+									<th data-header-row="3">G</th>
+									<td><input type="text" data-index="18" data-row="3" data-col="0"
+											autocomplete="off" maxlength="1">
+									</td>
+									<td><input type="text" data-index="19" data-row="3" data-col="1"
+											autocomplete="off" maxlength="1">
+									</td>
+									<td><input type="text" data-index="20" data-row="3" data-col="2"
+											autocomplete="off" maxlength="1">
+									</td>
+									<td><input type="text" data-index="21" data-row="3" data-col="3"
+											autocomplete="off" maxlength="1">
+									</td>
+									<td><input type="text" data-index="22" data-row="3" data-col="4"
+											autocomplete="off" maxlength="1">
+									</td>
+									<td><input type="text" data-index="23" data-row="3" data-col="5"
+											autocomplete="off" maxlength="1">
+									</td>
+								</tr>
+								<tr>
+									<th data-header-row="4">V</th>
+									<td><input type="text" data-index="24" data-row="4" data-col="0"
+											autocomplete="off" maxlength="1">
+									</td>
+									<td><input type="text" data-index="25" data-row="4" data-col="1"
+											autocomplete="off" maxlength="1">
+									</td>
+									<td><input type="text" data-index="26" data-row="4" data-col="2"
+											autocomplete="off" maxlength="1">
+									</td>
+									<td><input type="text" data-index="27" data-row="4" data-col="3"
+											autocomplete="off" maxlength="1">
+									</td>
+									<td><input type="text" data-index="28" data-row="4" data-col="4"
+											autocomplete="off" maxlength="1">
+									</td>
+									<td><input type="text" data-index="29" data-row="4" data-col="5"
+											autocomplete="off" maxlength="1">
+									</td>
+								</tr>
+								<tr>
+									<th data-header-row="5">X</th>
+									<td><input type="text" data-index="30" data-row="5" data-col="0"
+											autocomplete="off" maxlength="1">
+									</td>
+									<td><input type="text" data-index="31" data-row="5" data-col="1"
+											autocomplete="off" maxlength="1">
+									</td>
+									<td><input type="text" data-index="32" data-row="5" data-col="2"
+											autocomplete="off" maxlength="1">
+									</td>
+									<td><input type="text" data-index="33" data-row="5" data-col="3"
+											autocomplete="off" maxlength="1">
+									</td>
+									<td><input type="text" data-index="34" data-row="5" data-col="4"
+											autocomplete="off" maxlength="1">
+									</td>
+									<td><input type="text" data-index="35" data-row="5" data-col="5"
+											autocomplete="off" maxlength="1">
+									</td>
+								</tr>                                                    
+							</table>
+							<br>
+							<div style="display: flex;">
+								<label for="keyword">Keyword:</label>
+								<input type="text" id="keyword" placeholder="Enter Keyword Here...">
+							</div>
+							<br>
+							<button id="encipher_button" onclick="encipherButtonFunction()">Encipher</button>
+							<button id="decipher_button" onclick="decipherButtonFunction()">Decipher</button>
+						</td>
+						<td style="width: 35%;">
+							<label for="ciphertext">Ciphertext</label>
+							<br>
+							<textarea name="ciphertext" 
+									spellcheck="false" 
+									id="ciphertext"
+									data-hasqtip="1" 
+									class="inouttextarea"
+									aria-describedby="qtip-1"
+									placeholder="Enter Ciphertext Here..."></textarea>
+						</td>
+					</tr>
+				</tbody>
+			</table>      
         </div>
+		
+		<script type="text/javascript" src="encipher.js"></script>
     </body>
 
     <footer class="footer">
