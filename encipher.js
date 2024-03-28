@@ -1,37 +1,41 @@
-function getKeysquare() {
-    const table = document.getElementById('keysquare')
-    for (let row of table.rows) {
-        for(let cell of row.cells) {
-            console.log(cell.innerText)
+function encrypt(plaintext, keysquare, keyword) {
+    if (keysquare.length != 36) {
+        alert("Invalid Input for ADFGVX Table.");
+        return;
+    }
+    if (keyword.length <= 1) {
+        alert("Invalid Keyword, should be at least 2 characters long.");
+        return;
+    }
+
+    adfgvx = "ADFGVX";
+    ciphertext = "";
+    
+    for (var i = 0; i < plaintext.length; i++) {
+        index = keysquare.indexOf(plaintext.charAt(i));
+        ciphertext += adfgvx.charAt(index / 6) + adfgvx.charAt(index % 6);
+    }
+
+    var colLength = ciphertext.length / keyword.length;
+    var chars = "abcdefghijklmnopqrstuvwxyz"; 
+
+    result = ""; 
+    k=0;
+
+    for(i=0; i < keyword.length; i++){
+        while(k<26){
+            t = keyword.indexOf(chars.charAt(k));
+            arrkw = keyword.split(""); 
+            arrkw[t] = "_"; 
+            keyword = arrkw.join("");
+            if(t >= 0) break;
+            else k++;
+        }
+
+        for(j=0; j < colLength; j++) {
+            result += ciphertext.charAt(j*keyword.length + t);
         }
     }
-    return "Asd#!$".toLowerCase().replace(/[^a-z0-9]/g, "");
-}
 
-function encipherButtonFunction()  {
-    var plaintext = document.getElementById('plaintext').value.toLowerCase().replace(/[^a-z]/g, "");
-    var keysquare = getKeysquare();
-    var keyword = document.getElementById('keyword').value.toLowerCase().replace(/[^a-z]/g, "");
-    
-    if (plaintext == "" || keysquare == "" || keyword == "") {
-        alert("Please enter plaintext, keyword, and table to be encrypted!");
-        return;
-    }
-
-    // var result = encrypt(plaintext, keysquare, keyword);
-    // document.getElementById('ciphertext').value = result;
-}
-
-function decipherButtonFunction()  {
-    var ciphertext = document.getElementById('ciphertext').value.toLowerCase().replace(/[^a-z]/g, "");
-    var keysquare = getKeysquare();
-    var keyword = document.getElementById('keyword').value.toLowerCase().replace(/[^a-z]/g, "");
-    
-    if (ciphertext == "" || keysquare == "" || keyword == "") {
-        alert("Please enter ciphertext, keyword, and table to be decrypted!");
-        return;
-    }
-
-    // var result = encrypt(ciphertext, keysquare, keyword);
-    // document.getElementById('plaintext').value = result;
+    return result;
 }
