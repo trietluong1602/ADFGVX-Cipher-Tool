@@ -37,7 +37,7 @@
 									placeholder="Enter Plaintext Here..."></textarea>
 						</td>
 						<td style="width: 30%;">
-							<label for="adfgvx_table">ADFGVX Table</label>
+							<label for="adfgvx_table">ADFGVX Substitution Table</label>
 							<br>
 							<table class="inner_table" id="keysquare">
 								<tr>
@@ -182,9 +182,30 @@
 								<input type="text" id="keyword" placeholder="Enter Keyword Here...">
 							</div>
 							<br>
-							<button id="encipher_button" onclick="encipherButtonFunction()">Encipher</button>
-							<button id="decipher_button" onclick="decipherButtonFunction()">Decipher</button>
-							<button id="reset_button" onclick="history.go(0)">Reset</button>
+							<table class="button_table">
+								<tr>
+									<td>
+										<button id="encipher_button" onclick="encipherButtonFunction()">Encipher</button>
+									</td>
+									<td>
+										<button id="decipher_button" onclick="decipherButtonFunction()">Decipher</button>
+									</td>
+									<td>
+										<button onclick="clearButtonDropdown()" class="dropbtn">Clear</button>
+										<div id="myDropdown" class="dropdown-content">
+											<button id="clear_plaintext_button" onclick="clearPlaintextButtonFunction()">Plaintext</button>
+											<button id="clear_ciphertext_button" onclick="clearCiphertextButtonFunction()">Ciphertext</button>
+											<button id="clear_keyword_button" onclick="clearKeywordButtonFunction()">Keyword</button>
+											<button id="clear_plaincipher_button" onclick="clearPlaintextButtonFunction();clearCiphertextButtonFunction()">Plaintext + Ciphertext</button>
+											<button id="clear_all_but_table_button" onclick="clearPlaintextButtonFunction();clearCiphertextButtonFunction();clearKeywordButtonFunction()">Plaintext + Ciphertext + Keyword</button>
+										</div>
+									</td>
+									<td>
+										<button id="reset_button" onclick="history.go(0)">Reset</button>
+									</td>
+								</tr>
+							</table>
+								
 						</td>
 						<td style="width: 35%;">
 							<label for="ciphertext">Ciphertext</label>

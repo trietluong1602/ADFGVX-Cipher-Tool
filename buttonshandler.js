@@ -25,3 +25,32 @@ function decipherButtonFunction()  {
     var result = decrypt(ciphertext, keysquare, keyword);
     document.getElementById('plaintext').value = result;
 }
+
+function clearButtonDropdown() {
+    document.getElementById("myDropdown").classList.toggle("show");
+}
+  
+window.onclick = function(event) {
+    if (!event.target.matches('.dropbtn')) {
+      var dropdowns = document.getElementsByClassName("dropdown-content");
+      var i;
+      for (i = 0; i < dropdowns.length; i++) {
+        var openDropdown = dropdowns[i];
+        if (openDropdown.classList.contains('show')) {
+          openDropdown.classList.remove('show');
+        }
+      }
+    }
+}
+
+function clearPlaintextButtonFunction() {
+    document.getElementById('plaintext').value = "";
+}
+
+function clearCiphertextButtonFunction() {
+    document.getElementById('ciphertext').value = "";
+}
+
+function clearKeywordButtonFunction() {
+    document.getElementById('keyword').value = "";
+}

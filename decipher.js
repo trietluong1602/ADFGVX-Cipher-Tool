@@ -55,10 +55,15 @@ function decrypt(ciphertext, keysquare, keyword)
 
     adfgvx = "adfgvx"; 
     result = "";
+    temp = 0;
 
-    for(var i  =0; i < plaintext.length; i+=2) {
+    for(var i=0; i < plaintext.length; i+=2) {
         keyindex = adfgvx.indexOf(plaintext.charAt(i))*6 + adfgvx.indexOf(plaintext.charAt(i+1));
         result += keysquare.charAt(keyindex);
+        if (result.length % 5 == temp) {
+            result += " ";
+            temp = (temp + 1) % 5;
+        }
     }
 
     return result;

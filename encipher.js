@@ -21,6 +21,7 @@ function encrypt(plaintext, keysquare, keyword) {
 
     result = ""; 
     k=0;
+    temp=0;
 
     for(i=0; i < keyword.length; i++){
         while(k<26){
@@ -34,6 +35,10 @@ function encrypt(plaintext, keysquare, keyword) {
 
         for(j=0; j < colLength; j++) {
             result += ciphertext.charAt(j*keyword.length + t);
+            if (result.length % 5 == temp) {
+                result += " ";
+                temp = (temp + 1) % 5;
+            }
         }
     }
 
